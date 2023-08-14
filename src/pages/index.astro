@@ -1,28 +1,238 @@
 ---
-import Navbar from "@ui/NavBar";
-
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="style/index.css" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+
   </head>
-  <body>
-    
-    <div class=" w-full h-screen  bg-indigo-800">
-      <div class=" w-full bg-white">
-        <Navbar client:load/>
+  <body class="hide-scroll h-screen">
+    <div class="flex justify-between 2xl:pr-72">
+      <div  class=" hide-scroll w-full h-screen scroll-container">
+        <section class="scroll-section w-full flex justify-between flex-col">
+          <div
+            class="relative w-full h-full bg-indigo-600 text-right flex items-center justify-center"
+          >
+            <h1
+              class="absolute text-3xl md:text-[14rem] text-left left-28 top-28 text-indigo-700 numbers font-bold"
+            >
+              01
+            </h1>
+
+            <p
+              class="absolute text-lg text-left left-32 bottom-28 text-white font-light tracking-widest"
+            >
+              Empowering<br />Business with<br />E-Commerce
+            </p>
+
+            <div
+              class="absolute text-2xl lg:text-8xl w-full text-right text-white right-28 flex flex-col justify-center items-end"
+            >
+              <h1 class="">
+                Empowering<br />Business with<br />E-Commerce
+              </h1>
+
+              <div
+                class="relative w-64 text-3xl mt-14 flex items-center justify-end"
+              >
+                <button
+                  class="absolute px-4 py-3 bg-white text-indigo-600 z-10"
+                >
+                  Let’s have a talk</button
+                >
+
+                <div
+                  class="absolute px-4 py-3 bg-transparent border border-indigo-800 text-indigo-600 translate-x-2 translate-y-2"
+                >
+                  Let’s have a talk
+                </div>
+              </div>
+            </div>
+            <span
+              class="absolute translate-x-2 -translate-y-28 right-20 z-20 h-[20px] w-[20px] bg-white rounded-full"
+            >
+            </span>
+
+            <span class="absolute left-20 z-10 h-full w-[2px] bg-indigo-50"
+          ></span>
+
+            <span class="absolute right-20 z-10 h-full w-[2px] bg-indigo-50">
+            </span>
+          </div>
+
+          <div
+            class="relative h-72 bg-indigo-600 w-full flex items-center justify-center"
+          >
+            <span class="absolute w-full h-[2px] bg-indigo-50"></span>
+
+            <span class="absolute right-20 z-10 h-full  w-[2px] bg-indigo-50"
+            ></span>
+            <span class="absolute left-20 z-10 h-full w-[2px] bg-indigo-50"
+            ></span>
+          </div>
+        </section>
+
+        <section class="scroll-section relative w-full flex justify-center flex-col">
+          <h1
+            class="absolute text-3xl md:text-[14rem] text-right right-28 top-28 text-indigo-700 numbers font-bold"
+          >
+            02
+          </h1>
+
+          <p
+            class="absolute text-lg text-right right-32 bottom-60 text-indigo-600 font-light tracking-widest"
+          >
+            Empowering<br />Business with<br />E-Commerce
+          </p>
+
+          <div
+            class="absolute text-2xl lg:text-8xl text-left text-indigo-600 top-52 left-28 flex flex-col justify-center items-start"
+          >
+            <h1 class="">
+              Why don’t you,<br />Go Online!
+            </h1>
+
+            <div
+              class="relative w-64 text-3xl mt-14 flex items-center justify-start"
+            >
+              <button class="absolute px-4 py-3 bg-indigo-600 text-white z-10">
+                Let’s Go Online</button
+              >
+
+              <div
+                class="absolute px-4 py-3 bg-transparent border border-indigo-800 text-indigo-600 translate-x-2 translate-y-2"
+              >
+                Let’s Go Online
+              </div>
+            </div>
+          </div>
+
+          <span
+              class="absolute -translate-x-[9px] -translate-y-[11rem] left-20 z-20 h-[20px] w-[20px] bg-indigo-700 rounded-full"
+            >
+            </span>
+
+          <span class="absolute left-20 z-10 h-full w-[2px] bg-indigo-700"
+          ></span>
+          <span class="absolute right-20 z-10 h-full w-[2px] bg-indigo-700"
+          ></span>
+          <div class="w-full h-full bg-indigo-50"></div>
+
+          <div
+            class="relative h-72 bg-indigo-50 w-full flex items-center justify-center"
+          >
+            <span class="absolute w-full h-[2px] bg-indigo-700"></span>
+
+            <span class="absolute right-20 z-10 h-1/2  w-[2px] bg-indigo-700"
+            ></span>
+            <span class="absolute translate-x-1/2 bottom-0 z-10 h-1/2 w-[2px] bg-indigo-700"
+            ></span>
+          </div>
+        </section>
+
+
+        <section class="scroll-section w-full flex justify-between flex-col">
+          <div
+            class="relative w-full h-screen bg-indigo-600 text-right flex items-center justify-center"
+          >
+            <h1
+              class="absolute text-3xl md:text-[14rem] text-left left-28 top-28 text-indigo-700 numbers font-bold"
+            >
+              03
+            </h1>
+
+
+
+            <div
+              class="absolute grid justify-between gap-20 uppercase text-3xl h-80 -rotate-90 md:text-[14rem] text-center right-0  text-white font-bold"
+            >
+            <h1 class=" text-stroke text-transparent">
+              Social
+            </h1>
+            <h1>
+              Media.
+            </h1>
+            </div>
+
+
+
+            <div
+              class="absolute -translate-x-1/2 translate-y-1/2 text-2xl lg:text-8xl w-full text-right text-white right-10 flex flex-col justify-center items-end"
+            >
+            <div
+                class="relative w-64 text-3xl mb-14 flex items-center justify-end"
+              >
+                <button
+                  class="absolute px-4 py-3 bg-white text-indigo-600 z-10"
+                >
+                  We will handle</button
+                >
+
+                <div
+                  class="absolute px-4 py-3 bg-transparent border border-indigo-800 text-indigo-600 translate-x-2 translate-y-2"
+                >
+                We will handle
+                </div>
+
+
+
+              </div>
+              <h1 class="">All your
+              </h1>
+
+              
+            </div>
+            
+
+            <span class="absolute translate-x-1/2 z-10 h-2/3 top-0 w-[2px] bg-indigo-50"
+          ></span>
+
+          <span
+              class="absolute translate-x-1/2 -translate-y-1/2 right-1/2 z-20 h-[20px] w-[20px] bg-white rounded-full"
+            >
+            </span>
+
+            <span class="absolute right-20 z-10 h-full w-[2px] bg-indigo-50">
+            </span>
+            <span class="absolute left-20 z-10 h-full w-[2px] bg-indigo-50">
+            </span>
+          </div>
+
+        </section>
+
       </div>
 
-      
-      
-      
+      <nav
+        class="fixed hidden 2xl:block w-72 h-screen overflow-hidden bg-indigo-600 right-0 px-10 py-20"
+      >
+        <div class="w-full h-full flex flex-col justify-between">
+          <h1 class="text-right font-bold text-white text-6xl leading-8">
+            Arceus
+            <span class="text-2xl text-indigo-800"> Digital</span>
+          </h1>
+
+          <div class="text-right text-2xl text-white">
+            <ul>
+              <li class="font-bold">Home</li>
+              <li>About us</li>
+              <li>services</li>
+              <li>Blog</li>
+              <li>-</li>
+              <li>Support</li>
+              <li>Contact us</li>
+            </ul>
+          </div>
+
+          <div class="h-60 bg-indigo-700"></div>
+        </div>
+      </nav>
     </div>
-    
-	
   </body>
+
+
 </html>
