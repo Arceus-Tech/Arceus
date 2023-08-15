@@ -1,19 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-
-font-family: 'Titillium Web', sans-serif;
-
-
+  font-family: "Titillium Web", sans-serif;
 }
 html {
-
   scroll-behavior: smooth;
 }
 
 .numbers {
-  font-family: 'Tomorrow', sans-serif;
+  font-family: "Tomorrow", sans-serif;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -23,22 +19,72 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .hide-scroll {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
-
 
 .scroll-container {
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-      }
-      .scroll-section {
-        scroll-snap-align: start;
-        height: 100vh;
-      }
-
-.text-stroke {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
+.scroll-section {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+
+.hidden-text-r {
+  opacity: 0;
+  transition: all 0.8s;
+  transform: translateX(10%);
+}
+
+.show-text-r {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.hidden-text-t {
+  transition: all 0.5s;
+  transform: translateX(100%);
+}
+
+.show-text-t {
+  transform: translateX(0);
+}
+
+.hidden-testimonial-t {
+  transition: all 0.8s;
+  transform: translateY(-20%);
+}
+
+.show-testimonial-t {
+  transform: translateY(0);
+}
+
+
+.hidden-text-l {
+  opacity: 0;
+  transition: all 0.8s;
+  transform: translateX(-10%);
+}
+
+.show-text-l {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hide-number {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: all .6s;
+}
+
+.show-number {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
