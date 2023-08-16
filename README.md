@@ -1,4 +1,5 @@
-# Astro Starter Kit: Minimal
+# Arceus Site : Powered by Arceus.tech
+# Developed by Thawshi Srikanth
 
 ```
 npm create astro@latest -- --template minimal
