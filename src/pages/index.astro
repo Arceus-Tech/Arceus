@@ -14,8 +14,10 @@ import FireworkAnimation from "@components/FireworkAnimation";
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add(showClass);
+              entry.target.classList.remove(selector);
             } else {
               entry.target.classList.remove(showClass);
+              entry.target.classList.add(selector);
             }
           });
         });
@@ -24,44 +26,152 @@ import FireworkAnimation from "@components/FireworkAnimation";
         hiddenTextElements.forEach((el) => observer.observe(el));
       };
 
+      function openNavbar() {
+        const navBar = document.getElementById("NavBar");
+        const icons = document.querySelector(".icon");
+        icons.classList.toggle("open");
+        navBar.classList.toggle("-translate-y-full");
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         createIntersectionObserver(".hidden-text-r", "show-text-r");
         createIntersectionObserver(".hidden-text-l", "show-text-l");
         createIntersectionObserver(".hide-number", "show-number");
         createIntersectionObserver(".hidden-text-t", "show-text-t");
-        createIntersectionObserver(".hidden-testimonial-t", "show-testimonial-t");
+        createIntersectionObserver(
+          ".hidden-testimonial-t",
+          "show-testimonial-t"
+        );
       });
-    </script>
-    
-
-    <script is:inline>
-
-$(window).scroll(function() {
-  var scroll = $(window).scrollTop();
-  if (scroll >= $('#blue').offset().top) {
-    $('body').css('background-color', 'red');
-  }
-  if (scroll >= $('#black').offset().top) {
-    $('body').css('background-color', 'blue');
-  }
-});
     </script>
 
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
   <body class="hide-scroll h-screen">
-
-
-
-
-    
     <div class="flex justify-between">
       <div class="relative hide-scroll w-full h-screen scroll-container">
-        <div class=" fixed w-20 h-20 bg-white z-[100] right-0 top-1/2">
-
+        <div
+          class="fixed w-20 h-20 bg-indigo-50 z-[200] left-0 top-0 cursor-pointer border-b-2 border-indigo-50 flex items-center justify-center"
+        >
+          <svg
+            data-name="Layer 1"
+            class="h-10 w-10 text-indigo-600 "
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 95.75 82.41"
+          >
+            <polygon
+              points="95.75 82.41 85.31 82.41 80.2 73.63 70.33 73.63 75.43 82.41 65.25 82.41 60.15 73.63 44.36 73.63 44.36 64.63 54.93 64.63 47.88 52.5 30.5 82.41 20.32 82.41 47.88 34.99 65.11 64.63 74.98 64.63 47.88 17.99 10.44 82.41 0 82.41 47.88 0 95.75 82.41"
+              fill="currentColor"></polygon>
+          </svg>
         </div>
-        <section class="scroll-section w-full flex justify-between flex-col">
+
+
+        <div
+          id="NavBtn"
+          onclick="openNavbar()"
+          class="fixed w-20 h-20 bg-indigo-600 cursor-pointer z-[200] right-0 top-0 border-b-2 border-indigo-50 flex items-center justify-center"
+        >
+          <div class="icon nav-icon-1">
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+            <span class="nav-icon-dot"></span>
+          </div>
+        </div>
+
+        <div
+          id="NavBar"
+          class="fixed w-full h-screen top-0 justify-between flex-col bg-indigo-600 z-50 -translate-y-full transition-all duration-500"
+        >
+          <div class="w-full h-full relative justify-around flex items-center">
+            <div
+              class="justify-between absolute grid grid-cols-2 items-center w-full h-full p-40 gap-5"
+            >
+              <div class="flex flex-col">
+                <p class="text-indigo-50 text-2xl">Services</p>
+
+                <div class="flex flex-col gap-5">
+                  <div class="flex flex-col">
+                    <div
+                      class="relative w-full text-3xl mt-14 flex items-center justify-start"
+                    >
+                      <button
+                        class="absolute px-4 w-full py-3 border-2 border-indigo-50 hover:bg-indigo-50 z-10 hover:translate-x-2 hover:text-indigo-600 text-indigo-50 transition-all"
+                      >
+                        Digital Marketing</button
+                      >
+
+                      <div
+                        class="absolute px-4 w-full py-3 bg-transparent border-2 border-indigo-50 text-indigo-600"
+                      >
+                        Digital Marketing
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <div
+                      class="relative w-full text-3xl mt-14 flex items-center justify-start"
+                    >
+                      <button
+                        class="absolute px-4 w-full py-3 border-2 border-indigo-50 hover:bg-indigo-50 z-10 hover:translate-x-2 hover:text-indigo-600 text-indigo-50 transition-all"
+                      >
+                        Web Development</button
+                      >
+
+                      <div
+                        class="absolute px-4 w-full py-3 bg-transparent border-2 border-indigo-50 text-indigo-600"
+                      >
+                      Web Development
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col">
+                    <div
+                      class="relative w-full text-3xl mt-14 flex items-center justify-start"
+                    >
+                      <button
+                        class="absolute px-4 w-full py-3 border-2 border-indigo-50 hover:bg-indigo-50 z-10 hover:translate-x-2 hover:text-indigo-600 text-indigo-50 transition-all"
+                      >
+                        App Development</button
+                      >
+
+                      <div
+                        class="absolute px-4 w-full py-3 bg-transparent border-2 border-indigo-50 text-indigo-600"
+                      >
+                      App Development
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </div>
+
+            <span
+              class="absolute left-6 lg:left-20 z-10 h-full w-[2px] bg-indigo-50"
+            ></span>
+
+            <span
+              class="absolute right-6 lg:right-20 z-10 h-full w-[2px] bg-indigo-50"
+            >
+            </span>
+          </div>
+        </div>
+
+        <section
+          class="scroll-section w-full flex justify-between flex-col purple"
+        >
           <div
             class="relative w-full h-full bg-indigo-600 text-right flex items-center justify-center"
           >
@@ -133,7 +243,7 @@ $(window).scroll(function() {
         </section>
 
         <section
-          class="scroll-section relative w-full flex justify-center flex-col"
+          class="scroll-section relative w-full flex justify-center flex-col white"
         >
           <h1
             class="absolute hide-number text-[10rem] md:text-[14rem] text-right right-10 top-10 md:right-28 md:top-28 text-indigo-700 numbers font-bold"
@@ -194,7 +304,7 @@ $(window).scroll(function() {
         </section>
 
         <section
-          class="scroll-section w-full flex justify-between flex-col overflow-hidden"
+          class="scroll-section w-full flex justify-between flex-col overflow-hidden purple"
         >
           <div
             class="relative w-full h-screen bg-indigo-600 text-right flex items-center justify-center"
@@ -253,7 +363,7 @@ $(window).scroll(function() {
           class="scroll-section relative w-full flex justify-center flex-col"
         >
           <div
-            class="absolute text-2xl lg:text-8xl text-left text-indigo-600 top-20 w-full flex flex-col justify-center items-center"
+            class="absolute text-2xl lg:text-8xl text-center translate-y-9 text-indigo-600 top-20 w-full flex flex-col justify-center items-center"
           >
             <h1 class="relative text-center hidden-text-l">
               Feedback Fireworks
@@ -264,28 +374,29 @@ $(window).scroll(function() {
             </p>
           </div>
 
-          <div class="flex w-full absolute  bottom-20 items-center gap-5 justify-center p-10 border-y-2 border-indigo-600">
-
+          <div
+            class="flex w-full absolute bottom-20 pb-5 items-center gap-5 justify-center p-10 border-b-2 border-indigo-600"
+          >
             <div
-                class="relative hidden-text-r hover:-translate-x-2 text-3xl mb-14 flex items-center justify-end"
+              class="relative hidden-text-r hover:-translate-x-2 text-3xl mb-14 flex items-center justify-end"
+            >
+              <button
+                class="absolute px-4 py-3 text-white border border-indigo-600 bg-indigo-600 z-10"
               >
-                <button
-                  class="absolute px-4 py-3 text-white border border-indigo-600 bg-indigo-600 z-10"
-                >
-                  W</button
-                >
+                W</button
+              >
 
-                <div
-                  class="absolute px-4 py-3 bg-transparent border border-indigo-600 text-indigo-600 -translate-x-2 "
-                >
-                  W
-                </div>
-              </div>
-            <div class="p-5 border-x-2 hover:shadow-lg hidden-testimonial-t border-indigo-600 cursor-pointer">
-
-              
               <div
-                class=" overflow-hidden px-4 py-8 mx-auto text-center lg:py-16 lg:px-6"
+                class="absolute px-4 py-3 bg-transparent border border-indigo-600 text-indigo-600 -translate-x-2"
+              >
+                W
+              </div>
+            </div>
+            <div
+              class="p-5 border-2 hover:shadow-lg hidden-testimonial-t border-indigo-600 cursor-pointer"
+            >
+              <div
+                class="overflow-hidden px-4 py-8 mx-auto text-center lg:py-16 lg:px-6"
               >
                 <figure class="max-w-screen-md mx-auto">
                   <svg
@@ -300,7 +411,12 @@ $(window).scroll(function() {
                   </svg>
                   <blockquote>
                     <p class="text-2xl font-medium text-gray-900">
-                      Arceus Digital is absolutely superb! They've left us thoroughly impressed with their web development skills. They crafted a remarkable website for us at a lower cost, showcasing their expertise and dedication. The quality and value they delivered exceeded our expectations. Highly recommended!
+                      Arceus Digital is absolutely superb! They've left us
+                      thoroughly impressed with their web development skills.
+                      They crafted a remarkable website for us at a lower cost,
+                      showcasing their expertise and dedication. The quality and
+                      value they delivered exceeded our expectations. Highly
+                      recommended!
                     </p>
                   </blockquote>
                   <figcaption
@@ -319,22 +435,21 @@ $(window).scroll(function() {
               </div>
             </div>
 
-
             <div
-                class="relative hidden-text-r hover:translate-x-2 text-3xl mb-14 flex items-center justify-start"
+              class="relative hidden-text-r hover:translate-x-2 text-3xl mb-14 flex items-center justify-start"
+            >
+              <button
+                class="absolute px-4 py-3 text-white border border-indigo-600 bg-indigo-600 z-10"
               >
-                <button
-                  class="absolute px-4 py-3 text-white border border-indigo-600 bg-indigo-600 z-10"
-                >
-                  W</button
-                >
+                W</button
+              >
 
-                <div
-                  class="absolute px-4 py-3 bg-transparent border border-indigo-600 text-indigo-600 translate-x-2 "
-                >
-                  W
-                </div>
+              <div
+                class="absolute px-4 py-3 bg-transparent border border-indigo-600 text-indigo-600 translate-x-2"
+              >
+                W
               </div>
+            </div>
           </div>
 
           <div class="absolute top-0 right-0 -translate-y-[50px]">
@@ -346,10 +461,8 @@ $(window).scroll(function() {
           <span class="absolute right-20 z-10 h-full w-[2px] bg-indigo-700"
           ></span>
           <div class="w-full h-full bg-indigo-50"></div>
-
         </section>
       </div>
-
     </div>
   </body>
 </html>
