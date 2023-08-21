@@ -1,0 +1,17 @@
+---
+const {title} = Astro.props;
+---
+
+<div class="relative w-full text-3xl mt-14 flex items-center justify-start">
+  <button
+    class="absolute px-4 w-full py-3 border-2 border-blue-50 hover:bg-blue-50 z-10 hover:translate-x-2 hover:text-blue-600 text-blue-50 transition-all"
+  >
+    {title}</button
+  >
+
+  <div
+    class="absolute px-4 w-full py-3 bg-transparent border-2 border-blue-50 text-blue-600"
+  >
+    {title}
+  </div>
+</div>

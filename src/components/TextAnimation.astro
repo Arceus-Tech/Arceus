@@ -1,0 +1,29 @@
+
+<script type="module" is:inline>
+
+const createIntersectionObserver = (selector, showClass) => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(showClass);
+        entry.target.classList.remove(selector);
+      } else {
+        entry.target.classList.remove(showClass);
+        entry.target.classList.add(selector);
+      }
+    });
+  });
+
+  const hiddenTextElements = document.querySelectorAll(selector);
+  hiddenTextElements.forEach((el) => observer.observe(el));
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  createIntersectionObserver(".hidden-text-r", "show-text-r");
+  createIntersectionObserver(".hidden-text-l", "show-text-l");
+  createIntersectionObserver(".hide-number", "show-number");
+  createIntersectionObserver(".hidden-text-t", "show-text-t");
+  createIntersectionObserver(".hidden-testimonial-t", "show-testimonial-t");
+});
+
+</script>

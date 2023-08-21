@@ -60,7 +60,7 @@ html {
 
 .hidden-testimonial-t {
   transition: all 0.8s;
-  transform: translateY(-50%);
+  transform: translateY(2%);
 }
 
 .show-testimonial-t {

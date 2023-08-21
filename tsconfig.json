@@ -9,6 +9,9 @@
       ],
       "@ui/*": [
         "ui/*"
+      ],
+      "@layouts/*": [
+        "layouts/*"
       ]
     },
     "jsx": "react-jsx",
