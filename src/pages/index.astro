@@ -13,11 +13,53 @@ import ScrollReavel from "@components/TextAnimation.astro";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Add a meta description tag to provide a brief summary of your page's content -->
+    <meta name="description" content="Your page description goes here." />
+
+    <!-- Add meta tags for social media sharing -->
+    <meta property="og:title" content="Arceus - Home Page" />
+    <meta property="og:description" content="Your page description goes here." />
+    <meta property="og:image" content="path/to/your/image.jpg" />
+    <meta property="og:url" content="https://www.example.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Add meta tags for search engine robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Add a canonical tag to specify the preferred version of this page -->
+    <link rel="canonical" href="https://www.example.com/" />
+
+    <!-- Add meta tags for structured data (optional but recommended) -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Digital Markting",
+        "name": "Your Organization Name",
+        "url": "https://www.example.com/",
+        "logo": "https://www.example.com/logo.png"
+      }
+    </script>
 
     <link rel="stylesheet" href="style/index.css" />
 
     <ScrollReavel />
+
+    <script>
+
+      document.addEventListener('mousemove', parallax);
+      
+      function parallax(e) {
+        this.querySelectorAll('.layer').forEach(layer => {
+          let speed = layer.getAttribute('data-speed');
+          let x = (window.innerWidth - e.pageX * speed) / 100;
+          let y = (window.innerWidth - e.pageY * speed) / 100;
+          layer.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+        
+      </script>
 
     <script is:inline>
       function openNavbar() {
@@ -34,7 +76,7 @@ import ScrollReavel from "@components/TextAnimation.astro";
   <body class="hide-scroll h-screen">
     <div class="flex justify-between">
       <div class="relative hide-scroll overflow-x-hidden w-full h-screen scroll-container">
-       <NavIcon />
+        <NavIcon />
         <NavBar />
         <SectionOne />
         <SectionTwo />
