@@ -48,6 +48,22 @@ html {
 }
 
 
+
+.gentle-fall-shake {
+  animation: tilt-n-move-fall 10s infinite ease-in-out;
+}
+
+
+@keyframes tilt-n-move-fall {
+  0% { top: -20%; transform: rotate(0deg); }
+  30% { top: 60%;  transform: rotate(5deg);}
+  50% { top: 55%;  transform: rotate(0eg);}
+  65% { top: 60%;  transform: rotate(-5deg);}
+  100% { top: -20%; transform: rotate(0deg);}
+}
+
+
+
 .hidden-text-r {
   opacity: 0;
   transition: all 0.8s;
@@ -206,3 +222,6 @@ html {
   left: 18px;
   bottom: 6px;
 }
+
+
+

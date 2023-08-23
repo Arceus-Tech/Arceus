@@ -2,28 +2,45 @@
 import Cards from "@components/Cards.astro";
 ---
 
-<section class="scroll-section h-full w-full flex justify-between flex-col purple">
+<section
+  class="scroll-section h-full w-full flex justify-between flex-col purple"
+>
   <div
-    class="relative w-full h-full bg-blue-600 text-right flex items-center justify-center"
+    class="relative w-full h-full bg-blue-50 text-right flex items-center justify-center"
   >
     <div
-      class="absolute text-5xl lg:text-8xl text-center top-20 text-white mx-auto flex flex-col justify-center items-end"
+      data-speed="-2"
+      class="absolute layer left-[10rem] bottom-10 mx-auto w-[18rem] md:w-[20rem]"
+    >
+      <img src="/images/globe.png" alt="" />
+    </div>
+
+
+    <div
+      class="text-3xl lg:text-8xl text-center gap-5 md:gap-20 text-blue-600 mx-auto flex flex-col justify-between items-center"
     >
       <h1 class="hidden-text-r flex flex-col">
         <span>We Are Experticed In</span>
       </h1>
+
+      <div
+        class="my-auto mx-auto grid md:grid-cols-3 gap-10 items-center place-content-center"
+      >
+        <Cards title="Digital Marketing"  speed="-2"/>
+        <Cards title="Web Developement" speed="0" />
+        <Cards title="SEO Solutions" speed="2"/>
+      </div>
     </div>
 
-
     <span
-      class="absolute translate-x-2 ball top-32 right-6 lg:right-20 z-20 h-[20px] w-[20px] bg-white"
+      class="absolute translate-x-2 ball top-32 right-6 lg:right-20 z-20 h-[20px] w-[20px] bg-blue-700"
     >
     </span>
 
-    <span class="absolute left-6 lg:left-20 z-10 h-full w-[2px] bg-blue-50"
+    <span class="absolute left-6 lg:left-20 z-10 h-full w-[2px] bg-blue-700"
     ></span>
 
-    <span class="absolute right-6 lg:right-20 z-10 h-full w-[2px] bg-blue-50">
+    <span class="absolute right-6 lg:right-20 z-10 h-full w-[2px] bg-blue-700">
     </span>
   </div>
 </section>

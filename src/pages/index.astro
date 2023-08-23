@@ -6,6 +6,7 @@ import SectionTwo from "@layouts/SectionTwo.astro";
 import SectionThree from "@layouts/SectionThree.astro";
 import FeedBack from "@layouts/FeedBack.astro";
 import Expertice from "@layouts/Expertice.astro";
+import ContactPage from "@layouts/ContactPage.astro";
 
 import ScrollReavel from "@components/TextAnimation.astro";
 ---
@@ -20,7 +21,10 @@ import ScrollReavel from "@components/TextAnimation.astro";
 
     <!-- Add meta tags for social media sharing -->
     <meta property="og:title" content="Arceus - Home Page" />
-    <meta property="og:description" content="Your page description goes here." />
+    <meta
+      property="og:description"
+      content="Your page description goes here."
+    />
     <meta property="og:image" content="path/to/your/image.jpg" />
     <meta property="og:url" content="https://www.example.com/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -47,19 +51,17 @@ import ScrollReavel from "@components/TextAnimation.astro";
     <ScrollReavel />
 
     <script>
+      document.addEventListener("mousemove", parallax);
 
-      document.addEventListener('mousemove', parallax);
-      
       function parallax(e) {
-        this.querySelectorAll('.layer').forEach(layer => {
-          let speed = layer.getAttribute('data-speed');
+        this.querySelectorAll(".layer").forEach((layer) => {
+          let speed = layer.getAttribute("data-speed");
           let x = (window.innerWidth - e.pageX * speed) / 100;
           let y = (window.innerWidth - e.pageY * speed) / 100;
           layer.style.transform = `translate(${x}px, ${y}px)`;
         });
       }
-        
-      </script>
+    </script>
 
     <script is:inline>
       function openNavbar() {
@@ -75,14 +77,19 @@ import ScrollReavel from "@components/TextAnimation.astro";
   </head>
   <body class="hide-scroll h-screen">
     <div class="flex justify-between">
-      <div class="relative hide-scroll overflow-x-hidden w-full h-screen scroll-container">
+      <div
+        class="relative hide-scroll overflow-x-hidden w-full h-screen scroll-container"
+      >
         <NavIcon />
         <NavBar />
         <SectionOne />
         <SectionTwo />
         <SectionThree />
-        <FeedBack />
+
         <Expertice />
+        <FeedBack />
+
+        <ContactPage />
       </div>
     </div>
   </body>
